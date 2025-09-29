@@ -69,9 +69,9 @@ class CiderScorer(object):
         '''called by constructor and __iadd__ to avoid creating new instances.'''
 
         if refs is not None:
-            self.crefs.append(cook_refs(refs))
+            self.crefs.append(cook_refs(refs, self.n))
             if test is not None:
-                self.ctest.append(cook_test(test)) ## N.B.: -1
+                self.ctest.append(cook_test(test, self.n)) ## N.B.: -1
             else:
                 self.ctest.append(None) # lens of crefs and ctest have to match
 
