@@ -159,7 +159,7 @@ class CiderScorer(object):
             return val
 
         # compute log reference length
-        self.ref_len = np.log(float(len(self.crefs)))
+        self.ref_len = np.log(max(2, len(self.crefs)))  # ensure log >= log(2)
 
         scores = []
         for test, refs in zip(self.ctest, self.crefs):
