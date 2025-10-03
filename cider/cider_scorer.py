@@ -125,7 +125,7 @@ class CiderScorer(object):
                 # compute norm for the vector.  the norm will be used for computing similarity
                 norm[n] += pow(vec[n][ngram], 2)
 
-                if n == 1:
+                if n == 0:
                     length += term_freq
             norm = [np.sqrt(n) for n in norm]
             return vec, norm, length
